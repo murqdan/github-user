@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivDetailAvatar"
+            android:layout_width="96dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/githubprofile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbDetailUsername"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvDetailFullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="@string/fullname"
+            android:textColor="#3C6255"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivDetailAvatar"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintStart_toStartOf="@+id/ivDetailAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/ivDetailAvatar"
+            tools:ignore="MissingConstraints,VisualLintOverlap,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvDetailFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="240dp"
+            android:text="@string/following"
+            android:textColor="#3C6255"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintStart_toEndOf="@+id/ivDetailAvatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvDetailCountFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:text="@string/dummycount"
+            android:textColor="#3C6255"
+            app:layout_constraintBottom_toTopOf="@+id/tvDetailFollowing"
+            app:layout_constraintEnd_toEndOf="@+id/tvDetailFollowing"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="@+id/tvDetailFollowing"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailFullname"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvDetailCountFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:text="@string/dummycount"
+            android:textColor="#3C6255"
+            app:layout_constraintBottom_toTopOf="@+id/tvDetailFollowers"
+            app:layout_constraintEnd_toEndOf="@+id/tvDetailFollowers"
+            app:layout_constraintStart_toStartOf="@+id/tvDetailFollowers"
+            app:layout_constraintTop_toBottomOf="@+id/tvDetailFullname"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvDetailFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:layout_marginEnd="2dp"
+            android:text="@string/followers"
+            android:textColor="#3C6255"
+            app:layout_constraintEnd_toStartOf="@+id/ivDetailAvatar"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints,TextSizeCheck" />
+
+        <ProgressBar
+            android:id="@+id/pbDetail"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbDetailUsername"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbDetailUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#3C6255"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUsernameToolBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usernametoolbar"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tbDetailUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsFollow"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp"
+        app:tabIndicatorColor="#EAE7B1"
+        app:tabTextColor="@android:color/white"
+        android:background="#3C6255"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpFollow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

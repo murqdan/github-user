@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GithubAccountApp</string>
+    <string name="avatarhomedesc">githubProfilImage</string>
+    <string name="usernameHome">usernameGithub</string>
+    <string name="accountLinkHome">linkGithubAccount</string>
+    <string name="search">search</string>
+    <string name="searchHint">find someone..</string>
+    <string name="githubprofile">GithubProfile</string>
+    <string name="fullname">fullname</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="dummycount">100</string>
+    <string name="usernametoolbar">username</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nofollow">No Follow</string>
+    <string name="nofollowers">No Followers</string>
+    <string name="nofollowing">No Following</string>
+</resources>
