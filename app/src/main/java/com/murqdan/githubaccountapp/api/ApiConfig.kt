@@ -1,4 +1,4 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.api
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

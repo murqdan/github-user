@@ -1,4 +1,4 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.murqdan.githubaccountapp.R
+import com.murqdan.githubaccountapp.response.ItemsItem
 
 class AccountAdapter(private val listAccount: List<ItemsItem>) :
     RecyclerView.Adapter<AccountAdapter.ViewHolder>() {

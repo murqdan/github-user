@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GithubAccountApp</string>
+    <string name="app_name">GithubAccApp</string>
     <string name="avatarhomedesc">githubProfilImage</string>
     <string name="usernameHome">usernameGithub</string>
     <string name="accountLinkHome">linkGithubAccount</string>
@@ -9,10 +9,17 @@
     <string name="fullname">fullname</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
-    <string name="dummycount">100</string>
+    <string name="dummycount">0</string>
     <string name="usernametoolbar">username</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nofollow">No Follow</string>
     <string name="nofollowers">No Followers</string>
     <string name="nofollowing">No Following</string>
+    <string name="fabdetailaccount">fabdetailaccount</string>
+    <string name="favorithome">favoriteHome</string>
+    <string name="titleFavActivity">Favorite Account</string>
+    <string name="titleThemeModeActivity">Theme Mode</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="lightmode">Light Mode</string>
+    <string name="title_activity_theme_mode">ThemeModeActivity</string>
 </resources>

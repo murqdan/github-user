@@ -1,4 +1,4 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.response
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,9 +1,12 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.ui
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.murqdan.githubaccountapp.api.ApiConfig
+import com.murqdan.githubaccountapp.response.GithubAccountResponse
+import com.murqdan.githubaccountapp.response.ItemsItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

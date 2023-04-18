@@ -1,5 +1,8 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.api
 
+import com.murqdan.githubaccountapp.response.DetailGithubAccountResponse
+import com.murqdan.githubaccountapp.response.GithubAccountResponse
+import com.murqdan.githubaccountapp.response.ItemsItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

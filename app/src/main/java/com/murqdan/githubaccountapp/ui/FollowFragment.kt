@@ -1,4 +1,4 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.murqdan.githubaccountapp.adapter.AccountAdapter
+import com.murqdan.githubaccountapp.response.ItemsItem
+import com.murqdan.githubaccountapp.R
 import com.murqdan.githubaccountapp.databinding.FragmentFollowBinding
 
 class FollowFragment : Fragment() {

@@ -14,10 +14,18 @@
         android:theme="@style/Theme.GithubAccountApp"
         tools:targetApi="31">
         <activity
-            android:name=".DetailAccountActivity"
+            android:name=".ui.ThemeModeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_theme_mode"
+            android:theme="@style/Theme.GithubAccountApp.NoActionBar" />
+        <activity
+            android:name=".ui.insert.AccountFavoriteActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.DetailAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

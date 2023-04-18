@@ -1,13 +1,18 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.ui
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.murqdan.githubaccountapp.api.ApiConfig
+import com.murqdan.githubaccountapp.repository.AccountRepository
+import com.murqdan.githubaccountapp.response.DetailGithubAccountResponse
+import com.murqdan.githubaccountapp.response.ItemsItem
 import retrofit2.Call
 import retrofit2.Response
 
-class DetailAccountViewModel : ViewModel(){
+class DetailAccountViewModel(application: Application) : ViewModel(){
 
     companion object {
         const val TAG = "DetailAccountViewModel"
@@ -31,6 +36,18 @@ class DetailAccountViewModel : ViewModel(){
     private val _isLoadingFollowing = MutableLiveData<Boolean>()
     val isLoadingFollowing: LiveData<Boolean> = _isLoadingFollowing
 
+    private val mAccountRepository: AccountRepository = AccountRepository(application)
+
+    fun getAllAccounts(): LiveData<List<ItemsItem>> = mAccountRepository.getAllAccounts()
+
+    fun insert(account: ItemsItem) {
+        mAccountRepository.insert(account)
+    }
+
+    fun delete(account: ItemsItem) {
+        mAccountRepository.delete(account)
+    }
+
     fun getDetailAccount(login: String) {
         _isLoadingDetailAcc.value = true
         val api = ApiConfig.getApiService().getDetailAccount(login)
@@ -48,7 +65,6 @@ class DetailAccountViewModel : ViewModel(){
                 _isLoadingDetailAcc.value = false
                 Log.e(TAG, "onFailure: ${t.message}")
             }
-
         })
     }
 

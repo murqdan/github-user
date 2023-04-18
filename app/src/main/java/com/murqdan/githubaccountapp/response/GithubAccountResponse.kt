@@ -1,6 +1,9 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.response
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
@@ -16,15 +19,19 @@ data class GithubAccountResponse(
 	val items: List<ItemsItem>
 )
 
+@Entity
 @Parcelize
 data class ItemsItem(
 
-	@field:SerializedName("login")
+	@PrimaryKey
+	@ColumnInfo(name = "login")
 	val login: String,
 
+	@ColumnInfo(name = "avatarUrl")
 	@field:SerializedName("avatar_url")
 	val avatarUrl: String,
 
+	@ColumnInfo(name = "htmlUrl")
 	@field:SerializedName("html_url")
 	val htmlUrl: String
 ) : Parcelable

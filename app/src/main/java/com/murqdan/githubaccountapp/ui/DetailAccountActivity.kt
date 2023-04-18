@@ -1,20 +1,27 @@
-package com.murqdan.githubaccountapp
+package com.murqdan.githubaccountapp.ui
 
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.murqdan.githubaccountapp.*
+import com.murqdan.githubaccountapp.adapter.SectionsPagerAdapter
 import com.murqdan.githubaccountapp.databinding.ActivityDetailAccountBinding
+import com.murqdan.githubaccountapp.response.DetailGithubAccountResponse
+import com.murqdan.githubaccountapp.response.ItemsItem
+import com.murqdan.githubaccountapp.ui.insert.AccountFavoriteViewModelFactory
 
 class DetailAccountActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailAccountBinding
     private lateinit var detailAccountViewModel: DetailAccountViewModel
+    private var isFavorite: Boolean = false
 
     companion object {
         const val EXTRA_ACCOUNT = "extra_account"
@@ -43,10 +50,7 @@ class DetailAccountActivity : AppCompatActivity() {
         }.attach()
         supportActionBar?.elevation = 0f
 
-        detailAccountViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        )[DetailAccountViewModel::class.java]
+        detailAccountViewModel = obtainViewModel(this)
 
         val accountGithub = if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra(EXTRA_ACCOUNT, ItemsItem::class.java)
@@ -67,6 +71,28 @@ class DetailAccountActivity : AppCompatActivity() {
         detailAccountViewModel.isLoadingDetailAcc.observe(this) {
             showLoading(it)
         }
+
+        detailAccountViewModel.getAllAccounts().observe(this) {
+            isFavorite = it.contains(accountGithub)
+            if (isFavorite) {
+                binding.fabDetailAccount.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.favorite_home))
+            } else {
+                binding.fabDetailAccount.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.favorite_border))
+            }
+        }
+
+        binding.fabDetailAccount.setOnClickListener {
+            if (isFavorite) {
+                detailAccountViewModel.delete(accountGithub!!)
+            } else {
+                detailAccountViewModel.insert(accountGithub!!)
+            }
+        }
+    }
+
+    private fun obtainViewModel(activity: AppCompatActivity): DetailAccountViewModel {
+        val factory = AccountFavoriteViewModelFactory.getInstance(activity.application)
+        return ViewModelProvider(activity, factory)[DetailAccountViewModel::class.java]
     }
 
     private fun showLoading(isLoading: Boolean) {

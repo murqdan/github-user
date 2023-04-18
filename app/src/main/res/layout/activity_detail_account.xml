@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:layout_gravity="center">
+    tools:context=".ui.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/ivDetailAvatar"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
             android:text="@string/fullname"
-            android:textColor="#3C6255"
+            android:textColor="@color/username"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/ivDetailAvatar"
             app:layout_constraintHorizontal_bias="0.516"
@@ -45,7 +45,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginTop="240dp"
             android:text="@string/following"
-            android:textColor="#3C6255"
+            android:textColor="@color/follow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.153"
             app:layout_constraintStart_toEndOf="@+id/ivDetailAvatar"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
             android:text="@string/dummycount"
-            android:textColor="#3C6255"
+            android:textColor="@color/follow"
             app:layout_constraintBottom_toTopOf="@+id/tvDetailFollowing"
             app:layout_constraintEnd_toEndOf="@+id/tvDetailFollowing"
             app:layout_constraintHorizontal_bias="0.454"
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="3dp"
             android:text="@string/dummycount"
-            android:textColor="#3C6255"
+            android:textColor="@color/follow"
             app:layout_constraintBottom_toTopOf="@+id/tvDetailFollowers"
             app:layout_constraintEnd_toEndOf="@+id/tvDetailFollowers"
             app:layout_constraintStart_toStartOf="@+id/tvDetailFollowers"
@@ -86,7 +86,7 @@
             android:layout_marginTop="240dp"
             android:layout_marginEnd="2dp"
             android:text="@string/followers"
-            android:textColor="#3C6255"
+            android:textColor="@color/follow"
             app:layout_constraintEnd_toStartOf="@+id/ivDetailAvatar"
             app:layout_constraintHorizontal_bias="0.875"
             app:layout_constraintStart_toStartOf="parent"
@@ -98,18 +98,19 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tabsFollow"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tbDetailUsername"
+            app:layout_constraintVertical_bias="0.564"
             tools:ignore="MissingConstraints" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tbDetailUsername"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#3C6255"
+            android:background="@color/backgroundtoolbar"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
@@ -132,21 +133,45 @@
             app:layout_constraintVertical_bias="0.5"
             tools:ignore="MissingConstraints" />
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabsFollow"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginTop="227dp"
+            android:background="#3C6255"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbDetailUsername"
+            app:layout_constraintVertical_bias="0.0"
+            app:tabIndicatorColor="#EAE7B1"
+            app:tabTextColor="@android:color/white"
+            tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpFollow"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabsFollow"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabDetailAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/fabdetailaccount"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabsFollow"
+            app:layout_constraintVertical_bias="0.954"
+            app:srcCompat="@drawable/favorite_border"
+            tools:ignore="ImageContrastCheck"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabsFollow"
-        android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:layout_marginTop="30dp"
-        app:tabIndicatorColor="#EAE7B1"
-        app:tabTextColor="@android:color/white"
-        android:background="#3C6255"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpFollow"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </LinearLayout>

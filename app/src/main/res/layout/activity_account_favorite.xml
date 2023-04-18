@@ -4,26 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.insert.AccountFavoriteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListAccountHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/rvFavoriteAccount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_account"/>
-
-    <ProgressBar
-        android:id="@+id/pbHome"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rvListAccountHome" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FollowFragment">
+    tools:context=".ui.FollowFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFragmentFollow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        tools:layout_editor_absoluteY="-16dp"
+        tools:listitem="@layout/item_account"/>
 
     <TextView
         android:id="@+id/tvFragmentFollow"

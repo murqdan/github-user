@@ -12,4 +12,8 @@
     <color name="green2">#61876E</color>
     <color name="green3">#A6BB8D</color>
     <color name="green4">#EAE7B1</color>
+
+    <color name="username">#3C6255</color>
+    <color name="backgroundtoolbar">#3C6255</color>
+    <color name="follow">#3C6255</color>
 </resources>
