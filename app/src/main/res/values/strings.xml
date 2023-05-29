@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GithubAccApp</string>
+    <string name="app_name">Github User</string>
     <string name="avatarhomedesc">githubProfilImage</string>
     <string name="usernameHome">usernameGithub</string>
     <string name="accountLinkHome">linkGithubAccount</string>
@@ -17,7 +17,7 @@
     <string name="nofollowing">No Following</string>
     <string name="fabdetailaccount">fabdetailaccount</string>
     <string name="favorithome">favoriteHome</string>
-    <string name="titleFavActivity">Favorite Account</string>
+    <string name="titleFavActivity">Favorite User</string>
     <string name="titleThemeModeActivity">Theme Mode</string>
     <string name="darkmode">Dark Mode</string>
     <string name="lightmode">Light Mode</string>

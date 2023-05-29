@@ -14,7 +14,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.murqdan.githubaccountapp.R
 import com.murqdan.githubaccountapp.adapter.AccountAdapter
@@ -52,8 +51,6 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         binding.rvListAccountHome.layoutManager = layoutManager
-        val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
-        binding.rvListAccountHome.addItemDecoration(itemDecoration)
 
         mainViewModel.githubacc.observe(this) { githubacc ->
             setAccountData(githubacc)
